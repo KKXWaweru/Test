@@ -1,0 +1,10 @@
+{
+  "appId": "com.example.app",
+  "appName": "MiniApp_POC",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": true
+    }
+  }
+}
