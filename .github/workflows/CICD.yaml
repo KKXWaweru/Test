@@ -7,8 +7,8 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  # This dynamically sets the image name to 'owner/repository-name' in lowercase
-  IMAGE_NAME: "quantam-app"
+  # This uses the exact GitHub repository path (e.g., 'your-username/quantam-app') in lowercase
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   # Job 1: Run React Application Tests
@@ -63,7 +63,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/${{ github.repository }}
           # Automatically generates tags based on git events (e.g., 'latest' and the git SHA)
           tags: |
             type=raw,value=latest
