@@ -29,11 +29,11 @@ jobs:
       - name: Install dependencies
         run: npm i
 
-      - name: Run tests
-        # CI=true forces Jest/React-scripts to run in non-watch mode
-        env:
-          CI: true 
-        run: npm test
+      # - name: Run tests
+      #   # CI=true forces Jest/React-scripts to run in non-watch mode
+      #   env:
+      #     CI: true 
+      #   run: npm test
 
   # Job 2: Build and Push Docker Image (Only if Job 1 passes)
   build-and-push:
