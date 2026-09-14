@@ -66,8 +66,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           # Automatically generates tags based on git events (e.g., 'latest' and the git SHA)
           tags: |
-            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
-            type=sha,format=short
+            type=raw,value=latest
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
